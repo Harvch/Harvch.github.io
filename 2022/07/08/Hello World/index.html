@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
-        <title>Hello World | Harvch( ‘-ωก̀ )です</title>
+        <title>Harvch( ‘-ωก̀ )です</title>
         <meta name="author" content="Harvch">
         <meta name="description" content="">
         <meta name="keywords" content="">
@@ -78,7 +78,7 @@
                         
 <div class="article">
     <div>
-        <h1>Hello World </h1>
+        <h1> </h1>
     </div>
     <div class="info">
         <span class="date">
@@ -91,7 +91,14 @@
         
     </div>
     <div class="content" v-pre>
-        
+        <h3 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h3><p>纪念一下 我的 blog 诞生</p>
+
+    </div>
+    
+    <link rel="stylesheet" href="https://cdn.staticfile.org/gitalk/1.7.2/gitalk.min.css">
+    <div id="comment">
+        <div id="gitalk-container">
+        </div>
     </div>
     
 </div>
@@ -122,6 +129,24 @@
         <script src="/js/particlex.js"></script>
         <script src="/js/showimg.js"></script>
         
+<script src="https://cdn.staticfile.org/gitalk/1.7.2/gitalk.min.js"></script>
+<script>
+    var clientID = "Harvch", clientSecret = "";
+    
+    const gitalk = new Gitalk({
+        clientID: clientID,
+        clientSecret: clientSecret,
+        repo: "https://github.com/Harvch/Harvch.github.io",
+        owner: "Harvch",
+        admin: ["Harvch"],
+        language: "zh-CN",
+        id: location.pathname,
+        distractionFreeMode: false,
+        
+    })
+    gitalk.render("gitalk-container")
+</script>
+
 
     </body>
 </html>

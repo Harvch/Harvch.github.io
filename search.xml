@@ -4,24 +4,11 @@
   
     
     <entry>
-      <title>about</title>
-      <link href="/2022/07/08/about/"/>
-      <url>/2022/07/08/about/</url>
+      <title></title>
+      <link href="/2022/07/08/Hello%20World/"/>
+      <url>/2022/07/08/Hello%20World/</url>
       
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>hello world</title>
-      <link href="/2022/07/08/hello-world/"/>
-      <url>/2022/07/08/hello-world/</url>
-      
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h3 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h3><p>纪念一下 我的 blog 诞生</p>]]></content>
       
       
       
