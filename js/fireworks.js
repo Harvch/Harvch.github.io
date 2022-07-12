@@ -15,7 +15,7 @@
         canvas.height = window.innerHeight * scale;
         ctx.scale(scale, scale);
     };
-    var colors = ["#FF324A", "#31FFA6", "#206EFF", "#FFFF99"];
+    var colors = ["#ffb6b9", "#fae3d9", "#bbded6", "#8ac6d1"];
     var createCircle = function (x, y) {
         var p = {};
         p.x = x;
