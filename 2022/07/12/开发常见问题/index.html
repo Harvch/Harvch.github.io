@@ -97,7 +97,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/常见问题" style="color: #ff7d73">
+                <a href="/tags/常见问题" style="color: #03a9f4">
                     常见问题
                 </a>
             </span>
@@ -112,24 +112,24 @@
 <p><strong>windows 系统启动服务时出现报错</strong></p>
 <p>1.Windows启动服务出现错误“并非所有的功能被成功更改” 的问题</p>
 <p>按 “Windows 徽标键+X”，启动 “Windows PowerShell（管理员）”，输入以下命令：</p>
-<pre><code>Dism /Online /Cleanup-Image /ScanHealth
+<pre><code class="bash">Dism /Online /Cleanup-Image /ScanHealth
 </code></pre>
 <p>这条命令将扫描全部系统文件并和官方系统文件对比，扫描计算机中的不一致情况</p>
-<pre><code class="shell">Dism /Online /Cleanup-Image /CheckHealth
+<pre><code class="bash">Dism /Online /Cleanup-Image /CheckHealth
 </code></pre>
 <p>这条命令必须在前一条命令执行完以后，发现系统文件有损坏时使用</p>
-<pre><code class="shell">DISM /Online /Cleanup-image /RestoreHealth
+<pre><code class="bash">DISM /Online /Cleanup-image /RestoreHealth
 </code></pre>
 <p>这条命令是把那些不同的系统文件还原成官方系统源文件</p>
 <p>无论前三条命令是否可用，完成后重启，再键入以下命令：</p>
-<pre><code class="shell">sfc /SCANNOW
+<pre><code class="bash">sfc /SCANNOW
 </code></pre>
 <h4 id="maven-常见问题"><a href="#maven-常见问题" class="headerlink" title="maven 常见问题"></a>maven 常见问题</h4><p>有的时候需要将一些自己封装的包放入本地仓库进行程序打包，可以是由 mvn 指令将包放入本地仓库</p>
-<pre><code class="shell">//将本地文件放入本地仓库，仓库的位置跟你本地的 settings.xml 配置有关
+<pre><code class="bash">//将本地文件放入本地仓库，仓库的位置跟你本地的 settings.xml 配置有关
 mvn install:install-file -Dfile=D:\company\encrypt_sdk.jar -DgroupId=encrypt_sdk -DartifactId=encrypt_sdk -Dversion=1.0 -Dpackaging=jar
 </code></pre>
 <p>idea maven 插件打包报错不知道怎么解决，可以尝试将依赖从本地仓库移除重新下载，或者使用 mvn 打包指令</p>
-<pre><code class="shell">//mvn 打包进入调试模式，会有比较相信的报错信息，应该能帮助你找到问题
+<pre><code class="bash">//mvn 打包进入调试模式，会有比较相信的报错信息，应该能帮助你找到问题
 mvn package -x
 </code></pre>
 <p><strong>前端传参常见问题</strong></p>
@@ -192,13 +192,13 @@ $.ajax(&#123;
 </code></pre>
 <p><strong>npm 清理缓存</strong></p>
 <p>web前端可能由于网络波动造成下载超时，npm缓存未清理造成依赖下载失败，解决（清理 npm 缓存）</p>
-<pre><code class="shell">npm cache clean --force              
+<pre><code class="bash">npm cache clean --force              
 </code></pre>
 <p>查看 npm 缓存的位置</p>
-<pre><code class="shell">npm cache dir              
+<pre><code class="bash">npm cache dir              
 </code></pre>
 <p>可能由于版本问题无法执行上一条指令，可以尝试下面这条</p>
-<pre><code class="shell">npm config list --json              
+<pre><code class="bash">npm config list --json              
 </code></pre>
 
     </div>
