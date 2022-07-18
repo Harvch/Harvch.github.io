@@ -89,6 +89,15 @@
             2022/7/12
         </span>
         
+        <span class="category">
+            <a href="/categories/常见问题">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                常见问题
+            </a>
+        </span>
+        
         
         <span class="tags">
             <span class="icon">
@@ -199,6 +208,15 @@ $.ajax(&#123;
 </code></pre>
 <p>可能由于版本问题无法执行上一条指令，可以尝试下面这条</p>
 <pre><code class="bash">npm config list --json              
+</code></pre>
+<h4 id="CMD指令"><a href="#CMD指令" class="headerlink" title="CMD指令"></a><strong>CMD指令</strong></h4><h5 id="CMD端口指令"><a href="#CMD端口指令" class="headerlink" title="CMD端口指令"></a><strong>CMD端口指令</strong></h5><p>查看端口（根据端口号）：</p>
+<pre><code class="bash">netstat -aon|findstr &quot;端口号&quot;
+</code></pre>
+<p>查看端口（全部）： </p>
+<pre><code class="bash">netstat -ano
+</code></pre>
+<p>杀死端口（根据pid）：</p>
+<pre><code class="bash">taskkill /pid &quot;pid&quot;
 </code></pre>
 
     </div>
