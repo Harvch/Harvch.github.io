@@ -106,7 +106,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/常见问题" style="color: #ffa2c4">
+                <a href="/tags/常见问题" style="color: #00a596">
                     常见问题
                 </a>
             </span>
@@ -217,6 +217,61 @@ $.ajax(&#123;
 </code></pre>
 <p>杀死端口（根据pid）：</p>
 <pre><code class="bash">taskkill /pid &quot;pid&quot;
+</code></pre>
+<p><strong>Vue 中监听浏览器关闭和刷新事件</strong></p>
+<p>beforeunload 页面关闭或刷新之前 （可逆：可阻止页面刷新或关闭）</p>
+<p>unload 页面关闭或刷新之后（不可逆：无法阻止页面刷新或关闭）</p>
+<p>在浏览器关闭前是无法判断用户是刷新还是退出，所以我们在用户再次打开的时候来判断用户是否刷新</p>
+<p>解决思路：</p>
+<p>1.用户关闭浏览器时，记录当前时间，并存于浏览器缓存中 </p>
+<p>2.用户再次打开页面时，获取上次退出的时间，并于当前时间进行比较，若小于5s则表示用户执行的是刷新操作，若大	于5s则判定为退出</p>
+<p>注意： 5s并非固定，要根据实际情况调整</p>
+<pre><code class="javascript">//javascript 代码
+// 进入页面执行
+// 记录当前时间并转成时间戳
+const now = new Date().getTime();
+// 从缓存中获取用户上次退出的时间戳
+const leaveTime = parseInt(localStorage.getItem(&#39;leaveTime&#39;), 10);
+// 判断是否为刷新，两次间隔在5s内判定为刷新操作
+const refresh = (now - leaveTime) &lt;= 5000;
+// 测试alert
+alert(refresh ? &#39;刷新&#39; : &#39;重新登陆&#39;);
+
+// 退出当前页面执行
+window.onunload = function(e)&#123; // ios 不支持 window.onbeforeunload()
+  // 将退出时间存于localstorage中
+  localStorage.setItem(&#39;leaveTime&#39;, new Date().getTime());
+&#125;
+</code></pre>
+<pre><code class="vue">//Vue 代码
+mounted:&#123;
+    window.addEventListener(&#39;beforeunload&#39;, e =&gt; this.beforeunloadFn())
+    window.addEventListener(&#39;unload&#39;, e =&gt; this.unloadFn())
+&#125;,
+methods:&#123;
+    unloadFn()&#123;
+        this._gap_time=new Date().getTime()-this._beforeUnload_time
+        if(this._gap_time &lt;= 5)&#123;
+            //浏览器关闭执行的代码块        
+        &#125;    
+    &#125;,
+    beforeloadFn()&#123;
+        thi._beforeUnload_time=new Date().getTime()            
+    &#125;
+&#125;,
+destroyed:&#123;
+    window.removeEvenListener(&#39;beforeunload&#39;,e =&gt; this.beforeloadFn())
+    window.removeEvenListener(&#39;unload&#39;,e =&gt; this.unloadFn())
+&#125;
+</code></pre>
+<p><strong>开发时经常有端口被占用的情况</strong></p>
+<p>windows解决方法</p>
+<pre><code class="bash">查看端口（根据端口号）
+netstat -aon|findstr &quot;端口号&quot;
+查看端口（全部）
+netstat -ano
+杀死端口（根据pid）
+taskkill /pid &quot;pid&quot;
 </code></pre>
 
     </div>

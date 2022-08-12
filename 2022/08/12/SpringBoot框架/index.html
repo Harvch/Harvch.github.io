@@ -1,0 +1,1536 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>SpringBoot框架 | Harvch( ‘-ωก̀ )です</title>
+        <meta name="author" content="Harvch">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <link rel="icon" href="https://avatars.githubusercontent.com/u/93763322?s=96&v=4">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.1.1/js/all.min.js"></script>
+		<script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+    <meta name="generator" content="Hexo 6.2.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Harvch( ‘-ωก̀ )です</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Harvch( ‘-ωก̀ )です</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>SpringBoot框架 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2022/8/12
+        </span>
+        
+        <span class="category">
+            <a href="/categories/Java">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                Java
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Spring" style="color: #03a9f4">
+                    Spring
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <p><strong>SpringBoot 框架</strong></p>
+<span id="more"></span>
+
+<p><strong>一、SpringBoot 概述</strong></p>
+<p><strong>1. SpringBoot 介绍</strong></p>
+<p>SpringBoot 是 Spring 家族中的一个框架，它是用来简化 Spring 应用程序的创建和开发；SpringBoot 完全抛弃了繁琐的 XML 配置。使用 SpringBoot 可以非常容易的创建基于 Spring 框架的应用程序</p>
+<p><strong>2. SpringBoot 特性</strong></p>
+<p>1、能快速的创建基于 spring 的应用程序</p>
+<p>2、能直接使用 main 方法，启用内嵌的 Tomcat 服务器，可以直接运行 SpringBoot  应用程序</p>
+<p>3、提供了约定的 startter POM 来简化 Maven 配置</p>
+<p>4、自动化配置</p>
+<p>5、基本可以完全不使用xml配置文件，采用注解进行配置</p>
+<p><strong>3. SpringBoot 优缺点</strong></p>
+<p>1、优点</p>
+<p>构建项目速度快</p>
+<p>对主流的开发框架集成</p>
+<p>项目可以独立运行，无需外部的 servlet 容器</p>
+<p>2、缺点</p>
+<p>版本迭代快</p>
+<p>封装太深，内部原理复杂</p>
+<p><strong>二、SpringBoot项目创建</strong></p>
+<p><strong>1.手动创建项目</strong></p>
+<ol>
+<li><p>手动创建 Maven 项目（不要使用模板）</p>
+</li>
+<li><p>pom 文件的配置（引入相应的依赖）</p>
+</li>
+</ol>
+<p>SpringBoot 项目都有一个父工程依赖</p>
+<pre><code class="xml">&lt;!--引入 SpringBoot 的父工程依赖--&gt;
+&lt;parent&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;version&gt;2.4.5&lt;/version&gt;
+    &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+&lt;/parent&gt;
+ &lt;!--引入依赖 web--&gt;
+ &lt;dependency&gt;
+     &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+     &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+ &lt;/dependency&gt;
+</code></pre>
+<ol start="3">
+<li>创建 SpringBoot 项目的启动类，启动类要使用 @SpringBootApplication 注解进行标识</li>
+</ol>
+<pre><code class="java">@SpringBootApplication
+public class SpringBootMain&#123;
+    public static void main(String[] args) &#123;
+        //启动应用程序
+         SpringApplication.run(SpringBootMain.class,args);
+    &#125;
+&#125;
+@Controller
+public class HelloController &#123;
+    @RequestMapping(&quot;/hello&quot;)
+    @ResponseBody
+    public String hello() &#123;
+        return &quot;Hello SpringBoot&quot;;
+    &#125;
+&#125;
+</code></pre>
+<p><strong>三、依赖管理</strong></p>
+<p><strong>1. SpringBoot 项目是由父工程进行依赖管理</strong></p>
+<p>每个 SpringBoot 项目都有一个父工程</p>
+<pre><code class="xml">//是Spring-boot-starter-parent
+&lt;parent&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+    &lt;version&gt;2.5.0&lt;/version&gt;
+    &lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;
+&lt;/parent&gt;
+//是spring-boot-starter-parent的pom文件
+&lt;parent&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-dependencies&lt;/artifactId&gt;
+    &lt;version&gt;2.5.0&lt;/version&gt;
+&lt;/parent&gt;
+</code></pre>
+<p>父工程管理应用程序中可能用到的依赖的版本</p>
+<p>修改依赖的版本：</p>
+<ol>
+<li><p>直接在依赖中添加标识</p>
+</li>
+<li><p>在中进行版本约束，此时版本约束的标识必须与  “spring-boot-dependencies” 中规定的版本标识一致</p>
+</li>
+</ol>
+<p><strong>2. 场景启动器</strong></p>
+<p>在 SpringBoot 项目中有 “ spring-boot-starter-<em>“ 场景（</em>：某种场景），只要引入了场景，此场景下的依赖都引入到项目中</p>
+<p>所有的场景都依赖 “spring-boot-starter” </p>
+<p><strong>3. 自动装配</strong></p>
+<p>@SpringBootApplication 注解</p>
+<p>作用：标识此项目是一个 SpringBoot 项目</p>
+<p>组成：由 @SpringBootConfiguration、@EnableAutoConfiguration、@ConponentScan</p>
+<p>@SpringBootConfiguration 注解：</p>
+<p>标识一个类是配置类，相当于 @Configuration 注解，可以被 ComponentScan 扫描到</p>
+<p>@EnableAutoConfiguration 注解：</p>
+<p>开启自动配置</p>
+<p>组成：@AutoConfigurationPackage、@Import</p>
+<p>@AutoConfigurationPackage</p>
+<p>组件扫描的位置</p>
+<p>@Import</p>
+<p>加载可以用到的配置类</p>
+<p>@ComponentScan 注解</p>
+<p>组件扫描</p>
+<p><strong>4. 默认包结构</strong></p>
+<p>SpringBoot 自动扫描主程序所在的包及其子包下的所有组件</p>
+<p>更改包扫描的位置</p>
+<p>修改 @SpringBootApplication 注解的 scanBasePackages 属性</p>
+<pre><code class="java">@SpringBootApplication(scanBasePackages = &quot;com.jbit&quot;)
+</code></pre>
+<p><strong>四、容器功能</strong></p>
+<p>@Configuration 注解</p>
+<p>作用：标识类是一个配置类（配置类相当于是 spring 的配置文件）</p>
+<p>@Bean 注解</p>
+<p>作用：将组件注册到 SpringBoot 容器中</p>
+<p>注意：此注解使用在方法上 </p>
+<pre><code class="java">@Configuration //标识此类是⼀个配置类，相当于配置⽂件;配置类也是springboot 中的⼀个组件
+public class EntityConfig &#123;
+    /*  
+    @Bean注解： 
+        将组件注册到容器中,是使⽤在⽅法上的  
+        ⽅法名就是组件的id，相当于配置⽂件中的id属性  
+        ⽅法返回类型就是组件的实体 
+    */
+    @Bean(name=&quot;zhang&quot;) //name -&gt; 组件在容器当中的名称
+    public Users getUser() &#123;
+        return new Users(&quot;张三&quot;,20)
+    &#125;
+&#125;
+</code></pre>
+<p>注意：配置类也是 SpringBoot 中的一个组件</p>
+<p>SpringBoot 中的组件都是单列</p>
+<p><strong>2. @Configuration 注解的属性</strong></p>
+<p>proxyBeanMethods 属性</p>
+<p>作用：</p>
+<p>是否使用代理的方式获取组件</p>
+<p>取值：</p>
+<p>true &gt; 每次获取组件时都要检查容器中是否有相应的组件，获取组件是从容器中获取的；默认值</p>
+<p>false &gt; 每次获取组件时不会检查容器中是否有相应的组件，通过调用方法的形式获取组件</p>
+<p>目的：</p>
+<p>保证容器中的组件是单例模式</p>
+<p>使用场景：</p>
+<p>主要使用在有组件依赖的时候</p>
+<p><strong>3. 条件装配</strong></p>
+<p>说明：</p>
+<p>当满足某个条件时，才将组件注入到容器中</p>
+<p>@Conditional 注解 &gt; 条件装配注解的父类</p>
+<p>​	<img src="/2022/08/12/SpringBoot%E6%A1%86%E6%9E%B6/SpringBoot01.jpg" alt="0" style="zoom: 50%;margin:0;"></p>
+<p>使用 ctrl+n 搜索 @Conditional 注解，打开源码，使用 ctrl+h 显示 @Conditional 的子类</p>
+<pre><code class="java">@Bean(name = &quot;zhang&quot;) //name是springboot容器中组件的名称
+@ConditionalOnBean(name = &quot;dog&quot;)
+public Users getUser() &#123;
+    Users user = new Users(&quot;zhangsan&quot;, 20);
+    user.setPet(getPet());
+    return user;
+&#125;
+//    @Bean(name = &quot;dog&quot;)
+public Pet getPet() &#123;
+    return new Pet(&quot;拉布拉多&quot;);
+&#125;
+</code></pre>
+<p>注意：</p>
+<p>使用在方法上，表示满足条件后装配指定的组件</p>
+<p>使用在配置类上，表示满足条件后装配配置类中的所有组件</p>
+<p><strong>4. 原生配置文件的引入</strong></p>
+<p>@ImportResource 注解</p>
+<p>作用：</p>
+<p>引入原生的配置文件</p>
+<p>位置：</p>
+<p>使用在任意的配置类中</p>
+<p>语法：</p>
+<p>@ImportResource({“原生配置文件的路径”})</p>
+<pre><code class="java">@Configuration
+//引入原生的配置文件
+@ImportResource(&#123;&quot;classpath:springbean.xml&quot;&#125;)
+public class ImportResourceConfig &#123;
+
+&#125;
+</code></pre>
+<p><strong>5. 属性绑定</strong></p>
+<p>可以在 SpringBoot 的配置文件中设置属性值进行属性绑定</p>
+<ol>
+<li>使用 @ConfigurationProperties 注解进行属性绑定</li>
+</ol>
+<p>作用：</p>
+<p>属性绑定</p>
+<p>位置：</p>
+<p>实体类上</p>
+<p>要求：</p>
+<p>使用此注解的类必须是容器中的组件（要使用 @Component）</p>
+<pre><code class="java">#配置 Student 对象的属性值
+stu:
+  stuName:jack
+  gradeName:Y2
+  //表示是容器的组件
+@Component
+//绑定属性
+@ConfigurationProperties(prefix = &quot;stu&quot;)
+public class Student &#123;
+    private String stuName;
+    private String gradeName;
+&#125;
+</code></pre>
+<ol start="2">
+<li>采用 @Value 注解进行属性绑定</li>
+</ol>
+<p>作用：</p>
+<p>给实体类中的属性绑定值</p>
+<p>位置：</p>
+<p>属性的上面</p>
+<p>语法：</p>
+<p>@Value(“${前缀.属性名}”)</p>
+<pre><code class="yml">teacher:
+  teacherName:tom
+  gradeName:Y2
+</code></pre>
+<pre><code class="java">@Component
+public class Teacher &#123;
+@Value(&quot;$&#123;teacher.teacherName&#125;&quot;)
+private String teacherName;
+@Value(&quot;$&#123;teacher.gradeName&#125;&quot;)
+private String gradeName;
+</code></pre>
+<ol start="3">
+<li>@EnableConfigurationProperties + @ConfigurationProperties 实现属性绑定</li>
+</ol>
+<p>@EnableConfigurationProperties</p>
+<p>作用：</p>
+<ol>
+<li><p>开启组件属性配置功能（让 @ConfigurationProperties 注解生效）</p>
+</li>
+<li><p>将组件自动的注册到容器中</p>
+</li>
+</ol>
+<pre><code class="java">@ConfigurationProperties(prefix = &quot;car&quot;)
+public class Car &#123;
+    private String brand;
+    private int price;
+    @Override
+    public String toString() &#123;
+        return &quot;Car&#123;&quot; +
+                &quot;brand=&#39;&quot; + brand + &#39;\&#39;&#39; +
+                &quot;, price=&quot; + price +
+                &#39;&#125;&#39;;
+    &#125;
+//配置类
+@Configuration
+@EnableConfigurationProperties(Car.class)
+public class propertiesConfig &#123;
+&#125;
+//配置文件（yml文件）
+car:
+ brand:丰田
+ price:1
+ //使用（在controller为例）
+ @Autowired//自动注入组件
+ private Car car;
+ @RequestMapping(&quot;car&quot;)
+ @ResponseBody
+ public Car getCar() &#123;
+     return car
+ &#125;
+</code></pre>
+<p><strong>6. 热部署（热更新）</strong></p>
+<p>当 SpringBoot 中的内容发生改变，可以使用 ctrl+F9</p>
+<p>引入 devtools 依赖</p>
+<pre><code class="xml">&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;
+    &lt;optional&gt;true&lt;/optional&gt;
+    &lt;scope&gt;true&lt;/scope&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p><strong>五、配置文件</strong>	</p>
+<p>SpringBoot 的核心配置文件用于配置 SpringBoot 程序，名字必须以 application 开头</p>
+<p><strong>1. .properties文件</strong></p>
+<p>是 SpringBoot 采用的默认的配置文件</p>
+<pre><code class="properties">#配置tomcat信息
+#配置端口
+server.port=8888
+#配置上下文路径，上下文路径必须是&quot;/&quot;开头
+server.servlet.context-path==/spring
+</code></pre>
+<p><strong>2. .yaml 文件（也是 .yml 文件）</strong></p>
+<p>采用一定的空格、换行等格式排版进行配置，</p>
+<p>YAML 是”YAML Ain’t Markup Language” （YAML不是一种标记语言）、在开发中YAML（Yet Mnother Markup Language）仍是一种标记语言</p>
+<p>适用于以数据为中心的配置文件</p>
+<p>语法：</p>
+<p>​	key:value</p>
+<p>说明：</p>
+<p>​	key 之间必须有空格</p>
+<p>​	大小写敏感</p>
+<p>​	以缩进形式标识层级关系</p>
+<p>​	缩进不能使用 tab，必须使用空格，空格的个数没有要求，同级的元素左对齐</p>
+<pre><code class="yml">#配置端口号
+server:
+  port: 9090
+  #配置上下文
+  servlet:
+    context-path: /boot
+</code></pre>
+<p><strong>3. 多环境的配置</strong></p>
+<p>根据不同的要求（开发、测试、上线），有不同的配置文件</p>
+<p>要求：每一个环境创建的配置文件命名格式：application-环境标识 properties | yml            </p>
+<pre><code class="yml">#开发环境的配置（application-dev.yml）
+#配置端口和上下文路径
+server:
+  port: 8089
+  servlet:
+    context-path: /dev
+#测试环境配置文件（application-test.yml）
+#配置端口和上下文路径
+server:
+  port: 9191
+  servlet:
+    context-path: /test  
+#生产环境配置（application-product.yml）
+#配置端口和上下文路径
+server:
+  port: 6060
+  servlet:
+    context-path: /product
+    
+#application.yml -&gt; 主配置文件 -&gt; 让指定的配置文件生效
+spring:
+  profiles:
+    active: test
+</code></pre>
+<p><strong>六、SpringBoot Web开发</strong></p>
+<p>SpringBoot 自动配置了 SpringMVC</p>
+<p><strong>1. 静态资源的访问</strong></p>
+<img src="/2022/08/12/SpringBoot%E6%A1%86%E6%9E%B6/SpringBoot02.jpg" alt style="zoom: 50%;margin:0;">
+
+<p>​	静态资源的目录：</p>
+<p>​		&#x2F;static、&#x2F;public、&#x2F;resources、&#x2F;META-INF&#x2F;resources</p>
+<p>​	可以通过项目路径&#x2F;+静态资源形式访问项目中的静态资源</p>
+<p>​	<a target="_blank" rel="noopener" href="http://localhost:8080/9.jpg">http://localhost:8080/9.jpg</a></p>
+<p>​	问题：</p>
+<p>​		静态资源的访问路径与Controller的访问路径重名，将不能访问静态资源</p>
+<p>​	原因：</p>
+<p>​		静态资源的映射路径是 “&#x2F;**” ，由于 spring 中的核心控制器（DispatcherServlet）拦截的是所有请求的时候都会进入Controller 进	行处理，Controller 如果能处理请求直接处理用户的去请求，不能处理时交给静态资源处理，静态资源都不能处理返回404</p>
+<p>​	解决：</p>
+<p>​		可以通过配置静态资源的前缀（spring.mvc.static-path-pattern） </p>
+<pre><code class="properties">#配置静态资源的前缀
+spring.mvc.static-path-pattern=/res/**
+</code></pre>
+<p>​	访问静态资源的路径格式：项目根路径&#x2F;+静态资源前缀&#x2F;+静态资源名</p>
+<p><strong>2. 修改静态资源路径</strong></p>
+<pre><code class="properties">#配置静态资源路径
+spring.resources.static-locations=classpath:/abc/
+</code></pre>
+<p>只有静态资源放置在修改后的目录才能（META-INF&#x2F;resources目录除外）中才能访问</p>
+<p><strong>3. 欢迎页面</strong></p>
+<p>欢迎页面就是直接访问项目的根路径显示的页面</p>
+<p>在 SpringBoot 中使用静态资源路径下的 index.html 作为欢迎页面</p>
+<p>注意：如果要使用欢迎页面，静态资源不能配置前缀；否者欢迎页面无效</p>
+<p><strong>4. Rest 风格</strong></p>
+<ol>
+<li>为什么需要 Rest 风格</li>
+</ol>
+<p>​			以前是通过 URL 表示功能的操作（通过 URL 以 Controller 中的方法进行匹配）；需要对模块的操作的 URL 相同，处理请求的方	法与提交请求的方式进行匹配</p>
+<ol start="2">
+<li>什么是 Rest 风格</li>
+</ol>
+<p>​		使用 HTTP 请求方式的动词来表示请求资源的操作</p>
+<p>​		Get请求（获取数据）、Post请求（添加数据），Put请求（更新数据），Delete请求（删除数据）</p>
+<ol start="3">
+<li>使用Rest风格</li>
+</ol>
+<p>​		注意：</p>
+<p>​			表单只能提交get和post请求，即使表单中的method属性取值为Put、Delete都是调用的get请求</p>
+<p>​		配置Rest风格：</p>
+<p>​			Rest风格的核心 - Filter（HiddeenHttpMethodFilter）</p>
+<p>​			在SpringBoot中已经自动配置HiddenHttpMethodFilter</p>
+<p>​		注意：</p>
+<p>​			1. 在springboot中HiddenHttpMethodFilter过滤器是默认关闭的</p>
+<pre><code class="properties">#开启Rest风格
+spring.mvc.hiddenmethod.filter.enabled=true
+</code></pre>
+<p>​			2. 使用Rest风格表单的提交方式必须是post方式（get请求除外）</p>
+<p>​			3. 使用Rest风格表单提交时必须提交一个参数：_method，参数的取值为：（put、delete、patch）</p>
+<pre><code class="html">&lt;body&gt;
+    &lt;h1&gt;测试Rest风格&lt;/h1&gt;
+    &lt;form action=&quot;/user&quot; method=&quot;get&quot;&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;Rest-Get请求&quot;&gt;
+    &lt;/form&gt;
+    &lt;form action=&quot;/user&quot; method=&quot;post&quot;&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;Rest-Post请求&quot;&gt;
+    &lt;/form&gt;
+    &lt;form action=&quot;/user&quot; method=&quot;post&quot;&gt;
+        &lt;input type=&quot;hidden&quot; name=&quot;_method&quot; value=&quot;put&quot;&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;Rest-Put请求&quot;&gt;
+    &lt;/form&gt;
+    &lt;form action=&quot;/user&quot; method=&quot;post&quot;&gt;
+        &lt;input type=&quot;hidden&quot; name=&quot;_method&quot; value=&quot;delete&quot;&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;Rest-Delete请求&quot;&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+</code></pre>
+<pre><code class="java">@RestController
+public class RestsController &#123;
+    /*
+    1、保存用户
+    2、删除用户
+    3、获取用户
+     */
+    @GetMapping(&quot;/user&quot;)
+    //@RequestMapping(value = &quot;/user&quot;,method = RequestMethod.GET)
+    public String getUser() &#123;
+        return &quot;GET-张三&quot;;
+    &#125;
+    @PostMapping(&quot;/user&quot;)
+    //@RequestMapping(value = &quot;/user&quot;,method = RequestMethod.POST)
+    public String saveUser() &#123;
+        return &quot;POST-张三&quot;;
+    &#125;
+    @PutMapping(&quot;/user&quot;)
+    //@RequestMapping(value = &quot;/user&quot;,method = RequestMethod.PUT)
+    public String editUser() &#123;
+        return &quot;PUT-张三&quot;;
+    &#125;
+    //@RequestMapping(value = &quot;/user&quot;,method = RequestMethod.DELETE)
+    @DeleteMapping(&quot;/user&quot;)
+    public String deleteUser() &#123;
+        return &quot;DELETE-张三&quot;;
+    &#125;
+&#125;
+</code></pre>
+<p><strong>七、Thymeleaf模板</strong></p>
+<p><strong>1. Thymeleaf介绍</strong></p>
+<p>​	Thymeleaf是使用在Web和独立环境的服务器端Java模板引擎</p>
+<p>​	能够处理HTML\XML\JavaScript\CSS及纯文本文件</p>
+<p>​	可以作为MVC Web应用中View层展示数据</p>
+<p>​	SpringBoot是内嵌的容器，建议打包成Jar，不推荐使用JSP，使用Thymeleaf进行数据渲染</p>
+<p><strong>2. Thymeleaf基本语法</strong></p>
+<ol>
+<li>在HTML引入Thymeleaf约束</li>
+</ol>
+<p>​		在<html>标签中添加约束 “ xmlns&#x3D;’<a target="_blank" rel="noopener" href="http://www.thymeleaf.org&/#39;">http://www.thymeleaf.org&#39;</a> “</html></p>
+<pre><code class="html">&lt;html lang=&quot;en&quot; xmlns:th=&quot;http://www.thymelef.org&quot;&gt;
+</code></pre>
+<p>示例：</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot; xmlns:th=&quot;http://www.thymelef.org&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;测试Thymeleaf&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!--
+        th -&gt; thymeleaf表达式的前缀
+        th:text -&gt; 修改HTML元素文本值
+    --&gt;
+    &lt;h1 th:text=&quot;hello&quot;&gt;你好&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>​	说明：</p>
+<p>​		Thymeleaf的页面可以独立运行，Thymeleaf表达式不起作用，显示的就是HTML中的原始内容</p>
+<p>​		Thymeleaf的页面是通过后端跳转的，渲染后端的数据</p>
+<ol start="2">
+<li>表达式</li>
+</ol>
+<p>​		变量取值：${….} -》获取变量或作用域中的数据</p>
+<p>​		链接：@{…..} -》生成链接</p>
+<p>​		选择变量：*{….} -》获取变量的值</p>
+<p>​		消息：#{….} -》 获取国际化等值</p>
+<p>​		片段表达式： ~{….} -》 引入页面判断</p>
+<ol start="3">
+<li>字面值</li>
+</ol>
+<p>​		文本值、数字值、布尔值、空值、变量</p>
+<ol start="4">
+<li>文本操作</li>
+</ol>
+<p>​		文本的连接 </p>
+<p>​		a). ‘+’</p>
+<pre><code class="html">&lt;span th:text=&quot;&#39;图书的名称是:&#39;+$&#123;session.book.title&#125;&quot;&gt;&lt;/span&gt;        
+</code></pre>
+<p>​		b). ‘||’</p>
+<pre><code class="html">  &lt;span th:text=&quot;|图书的名称是:$&#123;session.book.title&#125;|&quot;&gt;&lt;/span&gt;              
+</code></pre>
+<ol start="5">
+<li>算术运算符</li>
+</ol>
+<p>​		+、-、*、&#x2F;、%</p>
+<ol start="6">
+<li>比较运算符</li>
+</ol>
+<p>​		大于：gt、小于：lt、大于等于：ge、小于等于：le、等于：eq、不等于：ne</p>
+<ol start="7">
+<li>布尔运算</li>
+</ol>
+<p>​		与：and、或：or、非：not</p>
+<ol start="8">
+<li>条件判断</li>
+</ol>
+<p>​		th:if &gt; 条件成立（条件成立显示类容）</p>
+<p>​		th:unless &gt; 条件不成立（条件不成立显示类容）</p>
+<pre><code class="html">&lt;h1&gt;
+    图书：[[$&#123;session.book.title&#125;]]的价格为：￥[[$&#123;session.book.price&#125;]]
+    &lt;span th:if=&quot;$&#123;session.book.price&#125; &gt; 20&quot;&gt;好贵&lt;/span&gt;
+    &lt;span th:unless=&quot;$&#123;session.book.price&#125; &lt; 20&quot;&gt;好贵&lt;/span&gt;
+&lt;/h1&gt;
+</code></pre>
+<ol start="9">
+<li>分支语句</li>
+</ol>
+<p>​		th:switch 和 th:case</p>
+<pre><code class="html">&lt;body&gt;
+    &lt;h1&gt;测试分支结构&lt;/h1&gt;
+    &lt;div th:switch=&quot;$&#123;result&#125;&quot;&gt;
+        &lt;h1 th:case=&quot;90&quot;&gt;优秀&lt;/h1&gt;
+        &lt;h1 th:case=&quot;80&quot;&gt;良好&lt;/h1&gt;
+        &lt;h1 th:case=&quot;70&quot;&gt;及格&lt;/h1&gt;
+        &lt;h1 th:case=&quot;*&quot;&gt;不及格&lt;/h1&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+<ol start="10">
+<li>迭代语句</li>
+</ol>
+<p>​		th:each&#x3D;”变量[,变量状态]” : “集合&#x2F;数组”</p>
+<pre><code class="html">&lt;body&gt;
+    &lt;!--
+        str -&gt; 迭代语句的中间变量
+        strStart -&gt; 迭代语句中的状态变量
+    --&gt;
+    &lt;h1&gt;测试迭代语句&lt;/h1&gt;
+    &lt;ul th:each=&quot;str,strStart : $&#123;lists&#125;&quot;&gt;
+        &lt;li th:text=&quot;$&#123;str&#125;&quot;&gt;&lt;/li&gt;
+        &lt;ul&gt;
+            &lt;li th:text=&quot;|索引(index),从0开始:$&#123;strStart.index&#125;|&quot;&gt;&lt;/li&gt;
+            &lt;li th:text=&quot;|元素个数(count),$&#123;strStart.count&#125;|&quot;&gt;&lt;/li&gt;
+            &lt;li th:text=&quot;|元素总个数(size),$&#123;strStart.size&#125;|&quot;&gt;&lt;/li&gt;
+            &lt;li th:text=&quot;|当前遍历的元素(current),$&#123;strStart.current&#125;|&quot;&gt;&lt;/li&gt;
+            &lt;li th:text=&quot;|是否是偶数(odd),$&#123;strStart.odd&#125;|&quot;&gt;&lt;/li&gt;
+            &lt;li th:text=&quot;|是否是奇数(even),$&#123;strStart.even&#125;|&quot;&gt;&lt;/li&gt;
+            &lt;li th:text=&quot;|是否是第一个数据(first),$&#123;strStart.first&#125;|&quot;&gt;&lt;/li&gt;
+            &lt;li th:text=&quot;|是否是最后一个数据(last),$&#123;strStart.last&#125;|&quot;&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/ul&gt;
+&lt;/body&gt;
+</code></pre>
+<ol start="11">
+<li>自定义变量</li>
+</ol>
+<p>​		th:with&#x3D;”变量名&#x3D;表达式”</p>
+<p>​		使用变量：使用变量表达式${…}获取变量中的数据</p>
+<p>​		th:object&#x3D;”表达式”</p>
+<p>​		将对象的信息进行保存，可以通过选择变量表达式*{……}获取对象的属性值</p>
+<pre><code class="html">&lt;h1&gt;自定义变量&lt;/h1&gt;
+&lt;div th:with=&quot;stuName=&#39;张三&#39;&quot;&gt;
+    &lt;h1 th:text=&quot;|学员的姓名是:$&#123;stuName&#125;|&quot;&gt;&lt;/h1&gt;
+&lt;/div&gt;
+&lt;h1&gt;保存对象信息&lt;/h1&gt;
+&lt;div th:object=&quot;$&#123;book&#125;&quot;&gt;
+    &lt;h1 th:text=&quot;|图书的名称是:*&#123;title&#125;|&quot;&gt;&lt;/h1&gt;
+    &lt;h1 th:text=&quot;|图书的价格是:*&#123;price&#125;|&quot;&gt;&lt;/h1&gt;
+&lt;/div&gt;
+</code></pre>
+<ol start="12">
+<li>内置对象</li>
+</ol>
+<p>​		#dates：日期内置对象</p>
+<p>​		#numbers：数字	</p>
+<p>​		#strings：字符串</p>
+<p>​		#object：Object</p>
+<p>​		#bools：Boolean</p>
+<p>​		#arrays：数组</p>
+<p>​		#lists：集合</p>
+<p>​		#sets：set集合</p>
+<p>​		#maps：map集合</p>
+<p>​		#messages：消息工具</p>
+<p><strong>3. SpringBoot整合Thymeleaf</strong></p>
+<p>​		1. 引入Thymeleaf的依赖</p>
+<pre><code class="xml">&lt;!--Thymeleaf依赖--&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p>​		2. SpringBoot自动配置了Thymeleaf   </p>
+<pre><code class="java">@Configuration
+@EnableConfigurationProperties(&#123;ThymeleafProperties.class&#125;)
+@ConditionalOnClass(&#123;TemplateMode.class&#125;)
+@AutoConfigureAfter(&#123;WebMvcAutoConfiguration.class, WebFluxAutoConfiguration.class&#125;)
+public class ThymeleafAutoConfiguration &#123;
+    &#125;
+</code></pre>
+<p>​		ThymeleafProperties类中</p>
+<pre><code class="java">@ConfigurationProperties(prefix = &quot;spring.thymeleaf&quot;)
+public class ThymeleafProperties &#123;
+    private static final java.nio.charset.Charset DEFAULT_ENCODING;
+    public static final java.lang.String DEFAULT_PREFIX = &quot;classpath:/templates/&quot;;
+    public static final java.lang.String DEFAULT_SUFFIX = &quot;.html&quot;;
+&#125;
+</code></pre>
+<p>​		自动配置了视图解析器：thymeleafViewResolver</p>
+<p>​		注意：</p>
+<p>​			1. Thymeleaf展示数据的文件的位置：”&#x2F;templates”</p>
+<p>​			2. Thymeleaf默认的 文件类型是：”.html”</p>
+<p>​			3. Thymeleaf页面跳转都是通过Controller进行控制的</p>
+<p><strong>八、SpringBoot整合JSP</strong></p>
+<p><strong>1. 引入JSP依赖</strong></p>
+<pre><code class="xml">&lt;!--引入JSP依赖--&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
+    &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
+    &lt;artifactId&gt;jstl&lt;/artifactId&gt;
+&lt;/dependency&gt;
+&lt;!--
+    jasper是Tomcat使用JSP引擎，可以将项目与Tomcat分离
+--&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.apache.tomcat.embed&lt;/groupId&gt;
+    &lt;artifactId&gt;tomcat-embed-jasper&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p><strong>2. 更新项目的目录</strong></p>
+<p>​	1. 完善web项目的目录结构</p>
+<p>​    <img src="/2022/08/12/SpringBoot%E6%A1%86%E6%9E%B6/SpringBoot03.jpg" alt style="zoom: 50%;margin:0;"></p>
+<ol start="2">
+<li>修改web项目的根路径</li>
+</ol>
+<img src="/2022/08/12/SpringBoot%E6%A1%86%E6%9E%B6/SpringBoot04.jpg" alt style="zoom: 30%;margin:0;">
+
+<ol start="3">
+<li>配置项目的属性</li>
+</ol>
+<p>​			配置项目资源的路径和返回页面的类型             </p>
+<pre><code class="properties">#配置返回页面的前缀
+spring.mvc.view.prefix=/
+#配置返回页面的后缀
+spring.mvc.view.suffix=.jsp
+</code></pre>
+<ol start="4">
+<li>创建控制器和返回页面</li>
+</ol>
+<pre><code class="java">@Controller
+public class IndexController &#123;
+    @RequestMapping(&quot;/&quot;)
+    public ModelAndView indexPage() &#123;
+        ModelAndView mv = new ModelAndView(&quot;index&quot;);
+        List&lt;Books&gt; books = new ArrayList&lt;&gt;();
+        books.add(new Books(1,&quot;springboot&quot;,22.00));
+        books.add(new Books(2,&quot;spring&quot;,44.00));
+        books.add(new Books(3,&quot;mybatis&quot;,33.00));
+        mv.addObject(&quot;books&quot;,books);
+        return mv;
+    &#125;
+&#125;
+</code></pre>
+<pre><code class="jsp">&lt;%@ page contentType=&quot;text/html;charset=UTF-8&quot; language=&quot;java&quot; %&gt;
+&lt;%@taglib prefix=&quot;c&quot; uri=&quot;http://java.sun.com/jsp/jstl/core&quot; %&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;welcome&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;table border=&quot;1&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+        &lt;tr&gt;
+            &lt;td&gt;序号&lt;/td&gt;
+            &lt;td&gt;名称&lt;/td&gt;
+            &lt;td&gt;单价&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;c:forEach items=&quot;$&#123;books&#125;&quot; var=&quot;book&quot;&gt;
+            &lt;tr&gt;
+                &lt;td&gt;$&#123;book.id&#125;&lt;/td&gt;
+                &lt;td&gt;$&#123;book.title&#125;&lt;/td&gt;
+                &lt;td&gt;$&#123;book.price&#125;&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/c:forEach&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>​		注意：可能无法找到项目页面（报status：404）</p>
+<p>​    <img src="/2022/08/12/SpringBoot%E6%A1%86%E6%9E%B6/SpringBoot05.jpg" alt style="zoom: 30%;margin:0;"></p>
+<p><strong>九、拦截器</strong></p>
+<p><strong>1. Spring中的拦截器</strong></p>
+<p>​	spring中的拦截器必须实现HandlerInterceptor接口</p>
+<ol>
+<li>preHandle(HttpServletRequest request,HttpServletResponse response,Object handler)方法</li>
+</ol>
+<p>​		作用：进行拦截处理</p>
+<p>​		执行的时机：在控制器方法执行前执行</p>
+<ol start="2">
+<li>postHandle(HttpServletRequest request, 	HttpServletResponse response, Object handler, @Nullable ModelAndView modelAndView)方法</li>
+</ol>
+<p>​		作用：进行相应处理</p>
+<p>​		执行的时机：在控制器执行完成后，但没有对客户返回响应的时候</p>
+<ol start="3">
+<li>afterCompletion(HttpServletRequest request,HttpServletResponse response, Object handler, @Nullable Exception ex)</li>
+</ol>
+<p>​		作用：释放资源</p>
+<p>​		执行的时机：在中央控制器完全处理完请求，已经将响应页面发送给客户时</p>
+<p><strong>2. SpringBoot中的拦截器</strong></p>
+<ol>
+<li>创建自定义拦截器，必须要实现HandlerInterceptor接口</li>
+</ol>
+<pre><code class="java">/*
+自定义拦截器
+ */
+public class MyInterceptor implements HandlerInterceptor &#123;
+    @Override
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception &#123;
+        //判断是否有用户登录
+        HttpSession session = request.getSession();
+        //获取登录的用户
+        Object loginUser = session.getAttribute(&quot;loginUser&quot;);
+        //判断是否有用户
+        if(null == loginUser) &#123;
+            //设置提示信息
+            request.setAttribute(&quot;msg&quot;,&quot;用户没有登陆,请先登录&quot;);
+            //跳转页面
+            request.getRequestDispatcher(&quot;/&quot;).forward(request,response);
+            return false;//被拦截
+        &#125;
+        return true;//放行
+    &#125;
+&#125;
+</code></pre>
+<ol start="2">
+<li>注册自定义的拦截器</li>
+</ol>
+<p>​		创建一个配置类，必须实现WebMvcConfigurer接口，实现addInterceptors方法</p>
+<pre><code class="java">@Configuration
+public class MyConfig implements WebMvcConfigurer &#123;
+    /*
+    重写注册拦截器的方法
+     */
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) &#123;
+        //设置拦截的路径
+        String[] addPathPatterns = &#123;&quot;/login&quot;,&quot;/main&quot;&#125;;//要连接的请求路径
+        //设置放行的路径
+        String[] excludePathPatterns = &#123;&quot;/&quot;,&quot;/login&quot;&#125;;//放行的路径
+        /*
+        * 添加拦截器
+        * addPathPatterns -&gt; 添加拦截路径
+        * excludePathPatterns -&gt; 添加放行路径
+        * */
+        registry.addInterceptor(new MyInterceptor()).addPathPatterns(addPathPatterns).excludePathPatterns(excludePathPatterns);
+    &#125;
+&#125;
+</code></pre>
+<p><strong>十、异常处理</strong> </p>
+<p><strong>1. SpringBoot异常处理机制</strong></p>
+<p>​	SpringBoot默认的异常处理都是映射到&#x2F;error路径上的</p>
+<p>​	机器客户端：SpringBoot异常处理响应的十一个JSON数据</p>
+<p>​	浏览机器客户端：SpringBoot异常处理响应的是一个错误页面</p>
+<p>​	要自定义异常处理，需要添加一个View视图解析</p>
+<img src="/2022/08/12/SpringBoot%E6%A1%86%E6%9E%B6/SpringBoot06.jpg" alt style="zoom: 50%;margin:0;">
+
+<p><strong>2. 异常处理的自动装配</strong></p>
+<p>​	在SpringBoot中的ErrorMvcAutoConfiguration类，此类中自动配置了异常处理规则</p>
+<p>​	组件：public BasicErrorController basicErrorController(ErrorAttributes errorAttributes,ObjectProvider errorViewResolvers)</p>
+<p>​		作用：处理默认的&#x2F;error路径的请求，响应错误的页面（error页面）</p>
+<p>​	组件：public View defaultErrorView()</p>
+<p>​		作用：响应默认的错误页面</p>
+<p>​	组件：public BeanNameViewResolver beanNameViewResolver &gt; 视图解析器</p>
+<p>​		作用：按照视图名去容器中找View对象</p>
+<p>​	组件：DefaultErrorViewResolver conventionErrorViewResolver() &gt; 默认错误视图解析器</p>
+<p>​		作用：发生错误时，会根据http的状态码作为视图的地址查找错误页面</p>
+<p>​	组件：public DefaultErrorAttributes errorAttributes()</p>
+<p>​		作用：定义错误页面中可以包含的数据</p>
+<p><strong>3. 异常处理</strong></p>
+<ol>
+<li>使用@ExceptionHandler注解进行异常处理</li>
+</ol>
+<p>​		在控制器中处理异常的方法，并使用@ExceptionHandler注解标识</p>
+<pre><code class="java">/*
+定义异常处理的方法
+ */
+@ExceptionHandler(value = Exception.class)
+public  String exceptionHandler(Exception e)&#123;
+    return &quot;服务器异常，请与管理员联系！&quot;;
+&#125;
+</code></pre>
+<p>​		@ExceptionHandler注解的作用：</p>
+<p>​			标识此方法处理的时什么异常</p>
+<p>​			标识此方法处理的是什么异常</p>
+<ol start="2">
+<li>将异常放置在父类中处理</li>
+</ol>
+<p>​		创建父类</p>
+<pre><code class="java">/*
+所有控制器的父类
+作用：统一处理异常
+ */
+public class BaseController &#123;
+    @ExceptionHandler(value = Exception.class)
+    public ModelAndView defaultErrorHandler(Exception e) &#123;
+        ModelAndView mv = new ModelAndView();
+        mv.addObject(&quot;message&quot;,e.getMessage());
+        mv.addObject(&quot;status&quot;,102);
+        mv.setViewName(&quot;error&quot;);
+        return mv;
+    &#125;
+&#125;
+</code></pre>
+<p>​		所有的控制器继承父类</p>
+<pre><code class="java">@Controller
+public class IndexController extends BaseController &#123;
+    @GetMapping(&quot;/&quot;)
+    public String index()&#123;
+        return &quot;index&quot;;
+    &#125;
+    @GetMapping(&quot;/hello&quot;)
+    @ResponseBody
+    public String hello() &#123;
+        int i = 10 / 0;
+        return &quot;hello&quot;;
+    &#125;
+    /*
+    定义异常处理的方法
+     */
+    @ExceptionHandler(value = Exception.class)
+    public  String exceptionHandler(Exception e)&#123;
+        return &quot;服务器异常，请与管理员联系！&quot;;
+    &#125;
+&#125;
+</code></pre>
+<ol start="3">
+<li>使用 @ControllerAdvice + @ExceptionHandler 注解处理</li>
+</ol>
+<pre><code class="java">/*
+    全局异常处理器
+ */
+@ControllerAdvice
+public class GlobalExceptionHandler &#123;
+    @ExceptionHandler(value = Exception.class)
+    @ResponseBody
+    public Object globalException(Exception e)&#123;
+        Map&lt;String,Object&gt; map = new HashMap&lt;&gt;();
+        map.put(&quot;code&quot;,100);
+        map.put(&quot;message&quot;,e.getMessage());
+        return map;
+    &#125;
+&#125;
+</code></pre>
+<p><strong>十一、文件上传</strong></p>
+<p><strong>1. 文件上传的三要素</strong></p>
+<ol>
+<li><p>表单中必须有文件域（type&#x3D;file）</p>
+</li>
+<li><p>表单提交方式必须是 post 方式</p>
+</li>
+<li><p>表单的 enctype 属性必须是多部份表单形式（entype&#x3D;”multipart&#x2F;form-data”）</p>
+</li>
+</ol>
+<p><strong>2. 文件上传的实现</strong></p>
+<p>​	SpringBoot 中的文件上传自动装配配置到 MultipartAutoConfiguration 类中</p>
+<p>​	文件上传的配置信息：</p>
+<pre><code class="java">@Bean
+@ConditionalOnMissingBean(&#123;MultipartConfigElement.class, CommonsMultipartResolver.class&#125;)
+public javax.servlet.MultipartConfigElement multipartConfigElement() &#123; /* compiled code */ &#125;
+</code></pre>
+<p>​	文件上传解析器</p>
+<pre><code class="java">@Bean(name = &#123;&quot;multipartResolver&quot;&#125;)
+@ConditionalOnMissingBean(&#123;MultipartResolver.class&#125;)
+public StandardServletMultipartResolver multipartResolver() &#123;
+    StandardServletMultipartResolver multipartResolver = new StandardServletMultipartResolver();
+    multipartResolver.setResolveLazily(this.multipartProperties.isResolveLazily());
+    return multipartResolver;
+&#125;
+</code></pre>
+<p>​	文件上传实现</p>
+<p>​	表单         </p>
+<pre><code class="html">&lt;body&gt;
+    &lt;form th:action=&quot;@&#123;/upload&#125;&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;
+        简历：&lt;input type=&quot;file&quot; multiple name=&quot;uploadFiles&quot;/&gt;&lt;br/&gt;
+        &lt;button type=&quot;submit&quot;&gt;提交&lt;/button&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+</code></pre>
+<p>​	控制器</p>
+<pre><code class="java">@Controller
+public class IndexController &#123;
+    @GetMapping(&quot;/&quot;)
+    public String indexPage() &#123;
+        return &quot;welcome&quot;;
+    &#125;
+    @PostMapping(&quot;/upload&quot;)
+    public ModelAndView uploadFile(MultipartFile[] uploadFiles, HttpServletRequest request) throws IOException &#123;
+        //多文件上传
+        ModelAndView mv = new ModelAndView(&quot;main&quot;);
+        List&lt;Uploads&gt; uploadsList = new ArrayList&lt;&gt;();
+        String path = request.getServletContext().getRealPath(&quot;/upload/&quot;);
+        System.out.println(&quot;path=====&gt;&quot; + path);
+        if (uploadFiles.length &gt; 0) &#123;
+            for (MultipartFile uploadFile : uploadFiles) &#123;
+                String filename = uploadFile.getOriginalFilename();
+                File file = new File(path,filename);
+                if(!file.getParentFile().exists())&#123;
+                    file.getParentFile().mkdirs();
+                &#125;
+                uploadFile.transferTo(file);
+                uploadsList.add(new Uploads(filename,uploadFile));
+            &#125;
+        &#125;
+        mv.addObject(&quot;list&quot;,uploadsList);
+//        //判断是否有文件上传
+//        if(!uploadFile.isEmpty())&#123;
+//            //文件上传操作
+//            //设置文件保存的路径
+//            String path = request.getServletContext().getRealPath(&quot;/upload/&quot;);
+//            System.out.println(&quot;path=====&gt;&quot;+path);
+//            //获取文件名
+//            String filename = uploadFile.getOriginalFilename();
+//            //创建文件对象
+//            File file = new File(path,filename);
+//            //判断保存文件的路径是否存在
+//            if(!file.getParentFile().exists())&#123;
+//                file.getParentFile().mkdirs();
+//            &#125;
+//            //保存文件
+//            uploadFile.transferTo(file);
+//        &#125;
+//        mv.addObject(&quot;username&quot;,username);
+//        mv.addObject(&quot;fileName&quot;,uploadFile.getOriginalFilename());
+        return mv;
+    &#125;
+&#125;
+</code></pre>
+<p><strong>十二、数据访问</strong></p>
+<p><strong>1. JPA 介绍</strong></p>
+<p>​	JPA(Java Persistence API)是java持久化规范；是通过JDK5.0注解或xml描述对象-关系表映射关系，并将运行期的实体对象持久化到数据库中</p>
+<p><strong>2. Spring Data JPA</strong></p>
+<p>​	Spring Data JPA 是 Spring Data 中的一部分，可以轻松实现基于 JPA 的存储库。</p>
+<p>​	Spring Data JPA 用于处理基于 JPA 的数据访问层的增强。</p>
+<p>​	JPA 是 ORM 规范，Hibernate、MyBatis 都是 JPA 规范的具体实现</p>
+<p><strong>3. JPA 数据操作</strong></p>
+<p>​	spring data 是通过 Repository 接口来预定数据访问的统一标准</p>
+<pre><code class="java">@Indexed
+public interface Repository &lt;T, ID&gt; &#123;
+&#125;
+</code></pre>
+<p>​    <img src="/2022/08/12/SpringBoot%E6%A1%86%E6%9E%B6/SpringBoot07.jpg" alt style="zoom: 50%;margin:0;"></p>
+<ol>
+<li>引入约束</li>
+</ol>
+<pre><code class="xml">&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;mysql&lt;/groupId&gt;
+    &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p>​	CrudRepository 接口提供了最基本的对实体类的操作</p>
+<p>​	2. 创配置数据库信息和 JPA 信息</p>
+<pre><code class="properties"># 应用名称
+spring.application.name=spring_jpa
+#配置数据信息
+spring.datasource.url=jdbc:mysql://localhost:3306/crm?serverTimezone=Asia/Shanghai
+spring.datasource.username=root
+spring.datasource.password=123456
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+#配置JPA信息
+#配置要操作的数据库类型
+spring.jpa.database=mysql
+#是否在日志中显示执行的sql语句
+spring.jpa.show-sql=true
+#配置自动创建更新数据表
+#update -&gt; 在操作时验证表是否存在，当不存在时创建表
+spring.jpa.hibernate.ddl-auto=update
+</code></pre>
+<p>​	3. 创建 Dao 层接口，继承 CrudRepository 接口</p>
+<p>​		注：CrudRepository接口中定义了操作数据的统一方法，自定义的接口中可以不用定义任何方法</p>
+<pre><code class="java">/*
+接口中的泛型
+    第一个参数：要操作的实体对象
+    第二个参数：主键的数据类型
+ */
+public interface UserRepository extends CrudRepository&lt;Users,Integer&gt; &#123;
+&#125;
+</code></pre>
+<ol start="4">
+<li>创建业务层接口的实现类</li>
+</ol>
+<p>​		注：在实现类中自动注入数据访问层</p>
+<pre><code class="java">//接口
+public interface UserService &#123;
+    /*
+        Iterable是一个array
+     */
+    Iterable&lt;Users&gt; findAll();
+&#125;
+//实现类
+@Service(&quot;UserService&quot;)
+public class UserServiceImpl implements UserService &#123;
+    @Autowired
+    private UserRepository userRepository;
+    @Override
+    public Iterable&lt;Users&gt; findAll() &#123;
+        return userRepository.findAll();
+    &#125;
+&#125;
+</code></pre>
+<p>​	5. 创建控制器</p>
+<pre><code class="java">@RestController
+public class IndexController &#123;
+    @Autowired
+    private UserService service;
+    @GetMapping(&quot;/&quot;)
+    public Object findAll()&#123;
+        return service.findAll();
+    &#125;
+&#125;
+</code></pre>
+<p><strong>4. 使用 PagingAndSortingRepository 接口操作数据</strong></p>
+<p>​	PagingAndSortingRepository 接口继承了 CrudRepository 接口；具有 CrudRepository 接口的所有功能同时新增了分页排序功能</p>
+<p>​		数据访问层</p>
+<pre><code class="java">public interface UserPageRepository extends PagingAndSortingRepository&lt;Users,Integer&gt; &#123;
+&#125;
+</code></pre>
+<p>​		业务层</p>
+<pre><code class="java">//接口
+public interface UserService &#123;
+    //排序
+    Iterable&lt;Users&gt; findAllSort();
+    //分页
+    Page&lt;Users&gt; findAllPage(Integer pageIndex);
+&#125;
+//实现类
+@Service(&quot;UserService&quot;)
+public class UserServiceImpl implements UserService &#123;
+    @Autowired
+    private UserPageRepository userPageRepository;
+    //排序
+    @Override
+    public Iterable&lt;Users&gt; findAllSort() &#123;
+        //设置排序对象
+        /*
+            by() -&gt; 创建排序对象
+            参数：
+                第一个参数：排序规则（升序或降序）
+                第二个参数：排序的列
+         */
+        Sort sort = Sort.by(Sort.Direction.DESC,&quot;id&quot;);
+        return userPageRepository.findAll(sort);
+    &#125;
+    @Override
+    public Page&lt;Users&gt; findAllPage(Integer pageIndex) &#123;
+        /*
+            设置分页信息
+                PageRequest.of() -&gt; 设置分页属性
+                第一个参数：当前页数，从零开始
+                第二个参数：页面大小
+                第三个参数：排序对象（可以省略）
+         */
+        Pageable pageable = PageRequest.of(pageIndex-1,2);
+        return userPageRepository.findAll(pageable);
+    &#125;
+&#125;
+</code></pre>
+<p><strong>5. 使用JpaRepository接口数据访问</strong></p>
+<p>​	JpaRepository接口继承了PagingAndSortingRepository接口</p>
+<p>​	如果要自定义的条件查询，方法的命名必须以实体类的属性结尾；如果是模糊查询关键字 “like” 在方法名最后</p>
+<pre><code class="java">//数据访问层
+public interface UserJpaRepository extends JpaRepository&lt;Users,Integer&gt; &#123;
+    //条件查询
+    //方法名不能随意命名
+    //方法名时，要使用实体类中的属性
+    Users findByUsername(String username);
+    //模糊查询
+    //select * from t_user where username like %zhangsan%
+    List&lt;Users&gt; findByUsernameLike(String username);
+&#125;
+</code></pre>
+<p><strong>6. 使用JdbcTemplate操作数据</strong></p>
+<p>​	JdbcTemplate：Spring对JDBC操作的进一步封装，是Spring操作数据的核心对象</p>
+<p>​	常用方法：</p>
+<p>​		execute方法：可以执行任意的SQL语句，一般用于执行DDL语句</p>
+<p>​		update方法：用于执行增、删、改语句</p>
+<p>​		query方法和queryForXXX方法：执行查询操作</p>
+<p>​		call方法：用于执行存储过程</p>
+<ol>
+<li>引入依赖</li>
+</ol>
+<pre><code class="xml">&lt;!--引入jdbc依赖--&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-data-jdbc&lt;/artifactId&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;mysql&lt;/groupId&gt;
+    &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</code></pre>
+<ol start="2">
+<li>配置数据源</li>
+</ol>
+<pre><code class="properties"># 数据库驱动：
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+# 数据源名称
+spring.datasource.name=dataSource
+# 数据库连接地址
+spring.datasource.url=jdbc:mysql://localhost:3306/crm?serverTimezone=Asia/Shanghai
+# 数据库用户名&amp;密码：
+spring.datasource.username=root
+spring.datasource.password=123456
+</code></pre>
+<ol start="3">
+<li>创建实体类</li>
+</ol>
+<p>​	注意：实体类属性名同名</p>
+<pre><code class="java">@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Users &#123;
+    private int id;
+    private String user_name;
+    private String email;
+    private String true_name;
+&#125;
+</code></pre>
+<ol start="4">
+<li>创建数据访问层接口和实现类</li>
+</ol>
+<p>​	注意：自动注入JdbcTemplate</p>
+<pre><code class="java">//接口
+public interface UserRepository &#123;
+    List&lt;Users&gt; findAll();
+&#125;
+//实现类
+@Repository//标识本类是数据访问层
+public class UserRepositoryImpl implements UserRepository &#123;
+    //引入了jdbc的依赖，在容器中注册了JdbcTemplate
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
+    @Override
+    public List&lt;Users&gt; findAll() &#123;
+        //创建要执行的SQL语句
+        String sqlText = &quot;select * from t_user&quot;;
+        //确定数据行与实体类的映射关系
+        RowMapper&lt;Users&gt; rowMapper = new BeanPropertyRowMapper&lt;&gt;(Users.class);
+        return jdbcTemplate.query(sqlText,rowMapper);
+    &#125;
+&#125;
+</code></pre>
+<ol start="5">
+<li>业务层的接口和实现类</li>
+</ol>
+<pre><code class="java">//接口
+public interface UserService &#123;
+    List&lt;Users&gt; findAll();
+&#125;
+//实现类
+@Service(&quot;UserService&quot;)
+public class UserServiceImpl implements UserService &#123;
+    @Autowired
+    private UserRepository repository;
+    @Override
+    public List&lt;Users&gt; findAll() &#123;
+        return repository.findAll();
+    &#125;
+&#125;
+</code></pre>
+<ol start="6">
+<li>控制器</li>
+</ol>
+<pre><code class="java">@RestController
+public class UserController &#123;
+    @Autowired
+    private UserService service;
+    @GetMapping(&quot;/&quot;)
+    public Object findAll()&#123;
+        List&lt;Users&gt; users = service.findAll();
+        return users;
+    &#125;
+&#125;
+</code></pre>
+<p><strong>7. SpringBoot 整合 Druid 数据源</strong></p>
+<ol>
+<li>自定义整合 Druid 数据源</li>
+</ol>
+<p>​		a. 引入 Druid 数据源的依赖</p>
+<pre><code class="xml">&lt;dependency&gt;
+    &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
+    &lt;artifactId&gt;druid&lt;/artifactId&gt;
+    &lt;version&gt;1.0.9&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p>​		b. 创建配置类</p>
+<p>​			将 Durid 数据源注入到容器中</p>
+<pre><code class="java">/*
+Druid数据源的配置类
+ */
+@Configuration
+public class DruidConfig &#123;
+    @Bean //注册组件
+    @ConfigurationProperties(prefix = &quot;spring.datasource&quot;)
+    public DataSource dataSource() &#123;
+        //创建Druid数据源
+        DruidDataSource druidDataSource = new DruidDataSource();
+
+        return druidDataSource;
+    &#125;
+&#125;
+</code></pre>
+<p>​		c. 配置数据源的属性</p>
+<pre><code class="properties"># 数据库驱动：
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+# 数据源名称
+spring.datasource.name=spring_datasource
+# 数据库连接地址
+spring.datasource.url=jdbc:mysql://localhost:3306/crm?serverTimezone=Asia/Shanghai
+# 数据库用户名&amp;密码：
+spring.datasource.username=root
+spring.datasource.password=123456
+</code></pre>
+<ol start="2">
+<li>使用 SpringBoot 的场景整合 Druid 数据源</li>
+</ol>
+<p>​		引入 Druid 的场景</p>
+<pre><code class="xml">&lt;dependency&gt;
+    &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
+    &lt;artifactId&gt;druid-spring-boot-starter&lt;/artifactId&gt;
+    &lt;version&gt;1.2.6&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p>​		注意：Druid数据源的场景引入后，已经完成了自动装配</p>
+<p><strong>十三、SpringBoot 整合 MyBatis</strong></p>
+<p>​	springboot 整合 MyBatis 和 Spring 整合MyBatis是相同的。SpringBoot 作为快速搭建基于Spring框架的一个工具，封装了 Spring 框架中的所有组件。因此可以采用整合 Spring 整合 MyBatis 的方法进行整合</p>
+<p>​	整合步骤：</p>
+<ol>
+<li><p>引入依赖</p>
+</li>
+<li><p>编写配置进行整合</p>
+</li>
+</ol>
+<p>​		a). 配置数据源</p>
+<p>​		b). 配置 SqlSessionFactoryBean</p>
+<p>​		c). 配置 MapperScannerConfigurer</p>
+<p><strong>1. 采用 Spring 整合 MyBatis 方式</strong></p>
+<ol>
+<li>引入依赖</li>
+</ol>
+<pre><code class="xml">&lt;!--引入依赖--&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
+    &lt;artifactId&gt;mybatis&lt;/artifactId&gt;
+    &lt;version&gt;3.5.6&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
+    &lt;artifactId&gt;mybatis-spring&lt;/artifactId&gt;
+    &lt;version&gt;2.0.6&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;mysql&lt;/groupId&gt;
+    &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-data-jdbc&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</code></pre>
+<ol start="2">
+<li>配置数据源</li>
+</ol>
+<p>​		由于引入了spring-boot-starter-data-jdbc	，所以在SpringBoot中已经自动配置了数据源</p>
+<p>​		要提供数据源配置的属性</p>
+<pre><code class="properties">#配置数据源属性
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.url=jdbc:mysql://127.0.0.1:3306/crm?serverTimeZone=Asia/Shanghai
+spring.datasource.username=root
+spring.datasource.password=123456
+</code></pre>
+<ol start="3">
+<li>配置SqlSessionFactoryBean</li>
+</ol>
+<p>​		由于SpringBoot中没有XML文件，要将</p>
+<pre><code class="java">/*
+配置SqlSessionFactory
+ */
+@Configuration
+public class SqlSessionFactoryConfig &#123;
+    //注入数据源
+    @Autowired
+    private DataSource dataSource;
+    //注入SqlSessionFactoryBean组件
+    @Bean
+    public SqlSessionFactory sqlSessionFactoryBean() throws Exception &#123;
+        //创建SqlSessionFactoryBean组件
+        SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
+        //配置数据源
+        sqlSessionFactoryBean.setDataSource(dataSource);
+        //配置别名
+        sqlSessionFactoryBean.setTypeAliasesPackage(&quot;com.jbit.pojo&quot;);
+        return sqlSessionFactoryBean.getObject();
+    &#125;
+&#125;
+</code></pre>
+<ol start="4">
+<li>配置MapperScannerConfigurer</li>
+</ol>
+<pre><code class="java">/*
+配置MapperScannerConfigurer
+ */
+public class MapperScannerConfig &#123;
+    /*
+        注入Mapper扫描组件
+     */
+    @Bean
+    public MapperScannerConfigurer mapperScannerConfigurer() &#123;
+        //创建Mapper扫描器
+        MapperScannerConfigurer mapperScannerConfigurer = new MapperScannerConfigurer();
+        //配置SqlSessionFactory
+        mapperScannerConfigurer.setSqlSessionFactoryBeanName(&quot;sqlSessionFactoryBean&quot;);
+        //配置Mapper扫描路径
+        mapperScannerConfigurer.setBasePackage(&quot;com.jbit.dao&quot;);
+        return mapperScannerConfigurer;
+    &#125;
+&#125;
+</code></pre>
+<ol start="5">
+<li>实体类、Mapper 接口、Mapper 映射文件、业务层接口、业务层实现类、控制器与原来的代码一样</li>
+</ol>
+<p><strong>2. 采用 SpringBoot 场景整合</strong></p>
+<ol>
+<li>引入依赖</li>
+</ol>
+<pre><code class="xml">&lt;dependency&gt;
+    &lt;groupId&gt;org.mybatis.spring.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;mybatis-spring-boot-starter&lt;/artifactId&gt;
+    &lt;version&gt;2.2.0&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p>​    <img src="/2022/08/12/SpringBoot%E6%A1%86%E6%9E%B6/SpringBoot08.jpg" alt style="zoom: 50%;margin:0;"></p>
+<ol start="2">
+<li>编写配置进行整合</li>
+</ol>
+<p>​		a). 配置数据源</p>
+<p>​			由于引入了 JDBC 场景，SpringBoot 自动配置好了数据源</p>
+<p>​		b). 配置 SqlSessionFactoryBean</p>
+<pre><code class="java">@Bean
+@ConditionalOnMissingBean
+public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception &#123; /* compiled code */ &#125;
+</code></pre>
+<p>​			SpringBoot 自动配置了（SqlSessionTemplate &#x3D;&gt; 就是 SqlSession）</p>
+<p>​		c). 配置 MapperScannerConfigurer</p>
+<p>​			SpringBoot 自动配置了 MapperScannerConfigurer</p>
+<pre><code class="java">@Configuration
+@Import(&#123;AutoConfiguredMapperScannerRegistrar.class&#125;)
+@ConditionalOnMissingBean(&#123;MapperFactoryBean.class,MapperScannerConfigurer.class&#125;)
+public static class MapperScannerRegistrarNotFoundConfiguration implements InitializingBean &#123;
+&#125;
+</code></pre>
+<ol start="3">
+<li>配置配置文件、给数据源和 MaBatis 的属性设置值</li>
+</ol>
+<pre><code class="properties"># 数据库驱动：
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+# 数据源名称
+spring.datasource.name=defaultDataSource
+# 数据库连接地址
+spring.datasource.url=jdbc:mysql://localhost:3306/crm?serverTimezone=Asia/Shanghai
+# 数据库用户名&amp;密码：
+spring.datasource.username=root
+spring.datasource.password=123456
+
+#配置MyBatis的属性
+#配置映射文件的位置
+mybatis.mapper-locations=classpath:com/jbit/dao/*.xml
+#配置别名
+mybatis.type-aliases-package=com.jbit.pojo
+#配置MyBatis的核心配置文件位置
+#mybatis.config-location=
+#配置日志输出（显示SQL语句）
+mybatis.configuration.log-impl=org.apache.ibatis.logging.stdout.StdOutImpl
+</code></pre>
+<ol start="4">
+<li>实体类、Mapper 接口、Mapper 映射文件、业务层接口、业务层实现类、控制器与 SSM 项目一样</li>
+</ol>
+
+    </div>
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2020 - 2022 Harvch( ‘-ωก̀ )です
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Harvch
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+		<canvas id="background" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:-1" ></canvas>
+		<canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647" ></canvas> 
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+		<script src="/js/fireworks.js"></script>
+		<script src="/js/background.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+    </body>
+</html>
